@@ -9,6 +9,8 @@ import { Router, RouterModule } from '@angular/router';
   providers:[LoginService]
 })
 export class DashboardComponent implements OnInit {
+  isOpened:boolean = true;
+  isOpenSide:string = 'side';
 
   constructor(
     private loginService:LoginService,
@@ -16,6 +18,10 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if(window.innerWidth < 768) {
+      this.isOpened = false;
+      this.isOpenSide = 'over';
+    }
   }
 
   logOut() {

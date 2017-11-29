@@ -1,9 +1,11 @@
 import { NgModule, InjectionToken } from '@angular/core';
 //import { CommonModule } from '@angular/common';
-// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-// import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule} from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, 
+  MatInputModule, MatFormFieldModule, MatCardModule,
+   MatProgressBarModule, MatMenuModule, MatSidenavModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon'
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes }  from '@angular/router';
 import { AuthhttpModule } from "./authhttp/authhttp.module";
@@ -38,9 +40,11 @@ export const APP_DI_CONFIG: AppConfig = {
     ReactiveFormsModule,
     HttpModule,
     RouterModule,
-    // BrowserAnimationsModule,
-   // NoopAnimationsModule,
-   [MatButtonModule,MatCheckboxModule,MatInputModule, MatFormFieldModule],
+    FlexLayoutModule,
+    MatIconModule,
+   [MatButtonModule,MatCheckboxModule,MatInputModule, 
+    MatFormFieldModule,MatCardModule, MatProgressBarModule, 
+    MatMenuModule, MatSidenavModule],
         
   ],
   declarations: [],
@@ -49,12 +53,16 @@ export const APP_DI_CONFIG: AppConfig = {
     ReactiveFormsModule,
     HttpModule,
     RouterModule,
-    // BrowserAnimationsModule,
-    //NoopAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
     MatFormFieldModule,
+    FlexLayoutModule,
+    MatCardModule, 
+    MatMenuModule,
+    MatSidenavModule,
+    MatProgressBarModule,
+    MatIconModule
   ],
   providers:[{ provide: APP_CONFIG,
     useValue: APP_DI_CONFIG

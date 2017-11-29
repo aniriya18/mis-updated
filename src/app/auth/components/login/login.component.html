@@ -1,14 +1,46 @@
-<!-- <form #loginForm="ngForm" (ngSubmit)="sumbitFrm(login)">
-  <input type="text" name="email" [(ngModel)]="login.email">
-  <input type="password" name="password" [(ngModel)]="login.password">
-  <button type="submit">Submit</button>
-</form> -->
-<form #loginForm="ngForm" (ngSubmit)="sumbitFrm(login)">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food"  type="text" name="email" [(ngModel)]="login.email">
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food"  type="password" name="password" [(ngModel)]="login.password">
-  </mat-form-field>
-  <button mat-button type="submit">Submit</button>
-</form>
+<div class="strip"> 
+  <div class="strip_bg">
+    <h2 align="right"><span>MEMBER'S</span><strong> SIGN IN</strong></h2>
+  </div>
+</div>
+<mat-card class="loginBox" class.xs="login-mb" >
+  <mat-progress-bar *ngIf="loginProgress" mode="indeterminate"></mat-progress-bar>
+  <div fxLayout="column" class="container" style="padding: 5% 15% 15% 15%" class.xs="container-mb"> <!--  fxLayoutGap="20px"  -->
+    <div fxLayoutAlign="center" style="margin-bottom: 20px;">
+      <img class="logo" src="assets/images/H3U_Logo_SVG.svg" />
+    </div>
+
+    <form (ngSubmit)="sumbitFrm(login)" fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="left" #loginForm="ngForm" novalidate>
+
+      <mat-input-container>
+        <input matInput placeholder="Email" email name="email" [(ngModel)]="login.email">
+        
+      </mat-input-container>
+      <mat-input-container>
+        <input matInput placeholder="Password"  type="password" name="password" [(ngModel)]="login.password">
+        <mat-error>Please provide password</mat-error>
+      </mat-input-container>
+      <button mat-button type="submit" mat-raised-button>Submit</button>
+    </form>
+    <div fxLayout="row">
+      <!--<mat-checkbox fxFlex="60">Remember me</mat-checkbox>-->
+      <p><a routerLink="">Forgot password?</a> </p>
+      </div>
+  </div> 
+</mat-card>
+
+
+
+<!-- <div fxLayout="row">
+  <div fxFlex="100">
+    <form #loginForm="ngForm" (ngSubmit)="sumbitFrm(login)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Username"  type="text" name="email" [(ngModel)]="login.email">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password"  type="password" name="password" [(ngModel)]="login.password">
+      </mat-form-field>
+      <button mat-button type="submit" mat-raised-button color="primary">Submit</button>
+    </form>
+  </div>
+</div> -->

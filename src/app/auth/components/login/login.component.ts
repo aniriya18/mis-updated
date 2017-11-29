@@ -11,8 +11,11 @@ import { JwtHelper } from "angular2-jwt";
   providers:[LoginService]
 })
 export class LoginComponent implements OnInit {
-  login: object = {};
-  
+  // login: object = {};
+  login: any = {
+    email:"admin@h3u.com",
+    password:"admin"
+  };
   constructor(
     private router: Router,
     private loginService: LoginService,

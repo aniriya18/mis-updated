@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { GlobalModule } from "./global/global.module";
 import { routing } from './app-routing/app-routing';
@@ -15,7 +16,8 @@ import { AppComponent } from './app.component';
   imports: [
     routing,
     GlobalModule,
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthGuard
