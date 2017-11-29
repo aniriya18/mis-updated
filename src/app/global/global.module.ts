@@ -1,9 +1,13 @@
 import { NgModule, InjectionToken } from '@angular/core';
 //import { CommonModule } from '@angular/common';
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes }  from '@angular/router';
 import { AuthhttpModule } from "./authhttp/authhttp.module";
+import 'hammerjs';
 
 export let APP_CONFIG = new InjectionToken<AppConfig>('app.config');
 
@@ -22,9 +26,9 @@ if(getHostName == "localhost") {
 }
 
 export const APP_DI_CONFIG: AppConfig = {
-  nerve_token_key: "h3u_nerve_usertoken";
+  nerve_token_key: "h3u_nerve_usertoken",
   api_base_url: _hostName+'v2/apis/nerve/',
-  login_url: "auth/login";
+  login_url: "auth/login",
 }
 
 
@@ -33,14 +37,24 @@ export const APP_DI_CONFIG: AppConfig = {
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule
+    RouterModule,
+    // BrowserAnimationsModule,
+   // NoopAnimationsModule,
+   [MatButtonModule,MatCheckboxModule,MatInputModule, MatFormFieldModule],
+        
   ],
   declarations: [],
   exports: [
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule
+    RouterModule,
+    // BrowserAnimationsModule,
+    //NoopAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers:[{ provide: APP_CONFIG,
     useValue: APP_DI_CONFIG
