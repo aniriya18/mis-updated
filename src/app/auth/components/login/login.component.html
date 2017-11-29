@@ -1,0 +1,8 @@
+<p>
+  login works!
+</p>
+<form #loginForm="ngForm" (ngSubmit)="sumbitFrm(login)">
+  <input type="text" name="email" [(ngModel)]="login.email">
+  <input type="password" name="password" [(ngModel)]="login.password">
+  <button type="submit">Submit</button>
+</form>
