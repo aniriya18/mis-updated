@@ -4,6 +4,8 @@ import { GlobalModule } from "./../global/global.module";
 import { dashboardrouting } from './dashboard-routing';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -11,7 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CommonModule,
     GlobalModule
   ],
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, HeaderComponent, SidebarComponent],
   bootstrap:[DashboardComponent]
 })
 export class DashboardModule { }

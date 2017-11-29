@@ -5,11 +5,11 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const dashboardRoutes: Routes = [
     {path: '', component:DashboardComponent , 
-        // children:[
-        //     {path: 'profile' , loadChildren:"./../profile/profile.module#ProfileModule"},
+        children:[
+            {path: 'home' , loadChildren:"./../home/home.module#HomeModule"},
         //     {path: 'providers' , loadChildren:"./../providers/providers.module#ProvidersModule"},
         //     {path: 'provider' , loadChildren:"./../outlet/outlet.module#OutletModule"}
-        // ]
+        ]
     },
     {path: '**', redirectTo: '', pathMatch: 'full'},
 ];

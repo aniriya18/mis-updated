@@ -22,7 +22,8 @@ export class AppConfig {
 let getHostName = window.location.hostname;
 if(getHostName == "localhost") {
   //var _hostName = "http://192.168.9.50/";
-  var _hostName = "http://192.168.9.50/";
+  //var _hostName = "http://192.168.9.50/";
+  var _hostName = "https://www.h3u.com/";
 } else {
   var _hostName = "https://www.h3u.com/";
 }
