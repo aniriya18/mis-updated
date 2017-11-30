@@ -10,7 +10,7 @@
             </li>
           </a>
   
-          <a href="javascript:void(0)" [routerLinkActive]="['active']">
+          <a routerLink="product" [routerLinkActive]="['active']">
             <li>
               <span class="badge">12</span>
               <p><mat-icon class="mainIcon">store</mat-icon></p>
@@ -39,7 +39,7 @@
     </div>
   </mat-sidenav>
   
-  <div class="example-scrolling-content">
+  <div class="content">
     <router-outlet></router-outlet>
   </div>
   </mat-sidenav-container>
