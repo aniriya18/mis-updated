@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeDashboardComponent } from './components/home-dashboard/home-dashboard.component';
 import { ProductsComponent } from './components/products/products.component';
 import { PaymentsComponent } from './components/payments/payments.component';
+import { CorporatesComponent } from './components/corporates/corporates.component';
 
 
 @NgModule({
@@ -23,6 +24,6 @@ import { PaymentsComponent } from './components/payments/payments.component';
     ReactiveFormsModule
   ],
   declarations: [HomeDashboardComponent, ProductsComponent, 
-    PaymentsComponent]
+    PaymentsComponent, CorporatesComponent]
 })
 export class HomeModule { }

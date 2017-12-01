@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-payments',
@@ -8,10 +7,11 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 })
 export class PaymentsComponent implements OnInit {
 
-  constructor(private _router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
+
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -34,8 +34,4 @@ export class PaymentsComponent implements OnInit {
     console.log(e);
   }
  
-  moveToPayment() {
-    this._router.navigate(['/dashboard/payment']);
-    //alert("hello");
-  }
 }

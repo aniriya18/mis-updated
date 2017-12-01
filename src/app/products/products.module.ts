@@ -3,7 +3,13 @@ import { CommonModule } from '@angular/common';
 import { GlobalModule } from './../global/global.module';
 import { ProductRouting } from './../products/product-routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+
 import { ProductComponent } from './components/product/product.component';
+import { MhcComponent } from './components/mhc/mhc.component';
+import { HealthPackagesComponent } from './components/health-packages/health-packages.component';
+
 
 
 
@@ -15,7 +21,7 @@ import { ProductComponent } from './components/product/product.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [ProductComponent],
+  declarations: [ProductComponent, MhcComponent, HealthPackagesComponent],
   exports: [
     ProductComponent
   ]

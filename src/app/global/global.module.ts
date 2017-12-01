@@ -3,6 +3,7 @@ import { NgModule, InjectionToken } from '@angular/core';
 import { MatButtonModule, MatCheckboxModule, 
   MatInputModule, MatFormFieldModule, MatCardModule,
    MatProgressBarModule, MatMenuModule, MatSidenavModule } from '@angular/material';
+   
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon'
 import { ChartsModule } from 'ng2-charts';
@@ -10,7 +11,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes }  from '@angular/router';
 import { AuthhttpModule } from "./authhttp/authhttp.module";
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 import 'hammerjs';
+
 
 export let APP_CONFIG = new InjectionToken<AppConfig>('app.config');
 
@@ -45,10 +49,11 @@ export const APP_DI_CONFIG: AppConfig = {
     FlexLayoutModule,
     MatIconModule,
     ChartsModule,
+   
    [MatButtonModule,MatCheckboxModule,MatInputModule, 
     MatFormFieldModule,MatCardModule, MatProgressBarModule, 
     MatMenuModule, MatSidenavModule],
-        
+    NgxDatatableModule
   ],
   declarations: [],
   exports: [
@@ -60,13 +65,15 @@ export const APP_DI_CONFIG: AppConfig = {
     MatCheckboxModule,
     MatInputModule,
     ChartsModule,
+    
     MatFormFieldModule,
     FlexLayoutModule,
     MatCardModule, 
     MatMenuModule,
     MatSidenavModule,
     MatProgressBarModule,
-    MatIconModule
+    MatIconModule,
+    NgxDatatableModule
   ],
   providers:[{ provide: APP_CONFIG,
     useValue: APP_DI_CONFIG

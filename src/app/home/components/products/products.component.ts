@@ -12,8 +12,8 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
   }
-  public doughnutChartLabels:string[] = ['MedHealth Cards', 'Health Packages', 'Preventive PRograms'];
-  public doughnutChartData:number[] = [350, 450, 100];
+  public doughnutChartLabels:string[] = ['MedHealth Cards', 'Health Packages'];
+  public doughnutChartData:number[] = [350, 450];
   public doughnutChartType:string = 'doughnut';
  
   // events
