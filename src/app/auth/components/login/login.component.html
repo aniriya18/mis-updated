@@ -11,15 +11,16 @@
     </div>
 
     <form (ngSubmit)="sumbitFrm(login)" fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="left" #loginForm="ngForm" novalidate>
-
       <mat-input-container>
+        <input matInput placeholder="Mobile Number" name="mobileNumber" [(ngModel)]="login.mobileNumber">
+      </mat-input-container>
+      <!-- <mat-input-container>
         <input matInput placeholder="Email" email name="email" [(ngModel)]="login.email">
-        
       </mat-input-container>
       <mat-input-container>
         <input matInput placeholder="Password"  type="password" name="password" [(ngModel)]="login.password">
         <mat-error>Please provide password</mat-error>
-      </mat-input-container>
+      </mat-input-container> -->
       <button mat-button type="submit" mat-raised-button>Submit</button>
     </form>
     <div fxLayout="row">

@@ -11,7 +11,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions
     noJwtError:true,
     noTokenScheme:true,
 		 tokenGetter: (() =>  {
-       let item = JSON.parse(localStorage.getItem('h3u_nerve_usertoken'));
+       let item = JSON.parse(localStorage.getItem('h3u_mis_usertoken'));
        return 'Bearer '+item.token;
       }),
 		globalHeaders: [{'Content-Type':'application/json'}],

@@ -13,15 +13,17 @@ import { RouterModule, Routes }  from '@angular/router';
 import { AuthhttpModule } from "./authhttp/authhttp.module";
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
+
 import 'hammerjs';
 
 
 export let APP_CONFIG = new InjectionToken<AppConfig>('app.config');
 
 export class AppConfig {
-  nerve_token_key:string;
+  mis_token_key:string;
   api_base_url: string;
   login_url:string;
+  product_url:string;
 }
 
 let getHostName = window.location.hostname;
@@ -34,9 +36,10 @@ if(getHostName == "localhost") {
 }
 
 export const APP_DI_CONFIG: AppConfig = {
-  nerve_token_key: "h3u_nerve_usertoken",
-  api_base_url: _hostName+'v2/apis/nerve/',
+  mis_token_key: "h3u_mis_usertoken",
+  api_base_url: _hostName+'v2/apis/app/',
   login_url: "auth/login",
+  product_url: "opinion/FMO",
 }
 
 
