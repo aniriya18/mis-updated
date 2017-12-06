@@ -52,9 +52,10 @@
                 [footerHeight]="50"
                 [rowHeight]="50"
                 [scrollbarV]="true"
-                [rows]='rows'
-                [limit]="10"
-                [messages]="{emptyMessage: 'No record'}">
+                [rows]="rows"
+                [limit]="2"
+                [messages]="{emptyMessage: 'No record'}"
+                [sorts]="[{prop: 'name'}]">
             <!-- <ngx-datatable-column
                 class="material"
                 [width]="50"
@@ -64,23 +65,24 @@
                 [canAutoResize]="false">
             
             </ngx-datatable-column> -->
-            <ngx-datatable-column name="East Zone" [flexGrow]="3" [maxWidth]="200" prop="name">
-                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <ngx-datatable-column name="East Zone" [flexGrow]="3" [maxWidth]="200"  [sortable]="true"
+            [draggable]="false" [resizeable]="false" prop="name">
+                <ng-template let-row="row" ngx-datatable-cell-template>
                     {{row.east}}
                 </ng-template>
             </ngx-datatable-column>
             <ngx-datatable-column name="West Zone" [flexGrow]="1">
-                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
                     {{row.west}}
                 </ng-template>
             </ngx-datatable-column>
             <ngx-datatable-column name="North Zone" [flexGrow]="1">
-                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
                     {{row.north}}
                 </ng-template>
             </ngx-datatable-column>
             <ngx-datatable-column name="South Zone" [flexGrow]="1">
-                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
                     {{row.south}}
                 </ng-template>
             </ngx-datatable-column>
