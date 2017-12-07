@@ -13,7 +13,7 @@ import { JwtHelper } from "angular2-jwt";
 export class LoginComponent implements OnInit {
   // login: object = {};
   login: any = {
-     mobileNumber:"9313567755"
+    mobileNumber:"9313567755"
     // email:"admin@h3u.com",
     // password:"admin"
   };
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     // this.loginService.login(credential.email,credential.password)
     //   .subscribe(loginReponse => {
     //     if(this.validateLoginResponse(loginReponse)){
-    //       localStorage.setItem(this.config.nerve_token_key, JSON.stringify({ token: loginReponse.data.token }));
+    //       localStorage.setItem(this.config.mis_token_key, JSON.stringify({ token: loginReponse.data.token }));
     //       this.router.navigate(['/dashboard']);
     //     }
     //   })

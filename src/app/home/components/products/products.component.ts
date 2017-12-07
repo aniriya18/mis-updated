@@ -12,19 +12,24 @@ import { ProductsService } from "./../../../services/products/products.service";
 })
 export class ProductsComponent implements OnInit {
   chart : Object = {};
+  _dChart = [];
 
   constructor(
     private _router: Router,
     private _charts: ProductsService,
     // @Inject(APP_CONFIG) private config: AppConfig 
-  ) { }
+  ) {
+    //console.log("myvalue", this._charts.abc);
+   }
 
   ngOnInit() {
     //alert("hello");
     this.getCharts();
+    this.dChart();
   }
-  public doughnutChartLabels:string[] = ['MedHealth Cards', 'Health Packages'];
-  public doughnutChartData:number[] = [350, 450];
+  public doughnutChartLabels:string[] = [];
+  //public doughnutChartLabels = [];
+  public doughnutChartData:number[] = [];
   public doughnutChartType:string = 'doughnut';
  
   // events
@@ -37,6 +42,21 @@ export class ProductsComponent implements OnInit {
   // }
   getCharts(){
     this._charts.getProductInfo()
+      .subscribe(data => {
+        console.log(data.data);
+        for(var i = 0; i < data.data.length; i++) {
+         // console.log(data.data[i]['question']);
+         let x = String(data.data[i]['opinionType']);
+         //console.log(x);
+        // this.xyx.push(x);
+         this.doughnutChartLabels.push(String(data.data[i]['opinionType'])+",");
+          //this.doughnutChartLabels[i].push(data.data[i]['opinionType']);
+        }
+      })
+     // this.doughnutChartLabels.push("abc","xyz");
+      //console.log("ani", this.xyx);
+    //alert(0);
+    // this._charts.getProductInfo();
       // .subscribe(data => {
       //   console.log("my data", data.data);
       // })
@@ -49,10 +69,43 @@ export class ProductsComponent implements OnInit {
     //   //  this.chart['dob'] = new Date(_dob);
     // });
    //alert("0");
-   console.log("testing");
+  //  console.log("testing");
    }
+
   moveToProduct() {
     this._router.navigate(['/dashboard/product']);
   }
 
+  dChart() {
+   this._dChart = [
+      {
+        productName: ["product-1", "product-2","product-3"],
+        counts: [20, 30, 45]
+      }
+    ]
+    this.doughnutChartLabels = this._dChart[0]['productName'];
+    this.doughnutChartData = this._dChart[0]['counts'];
+    console.log("chart", this._dChart);
+  }
+
+  
 }
+
+
+// var doughnut = [
+//   {
+//     productName: ["product-1", "product-2","product-3"],
+//     counts: [20, 30, 45, 50]
+//   }
+// ]
+
+// var barChart = [
+//   {
+//     periods: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+//     amount: [
+//       {data: [28, 65, 45, 12, 43, 98], label: 'Series B'},
+//       {data: [65, 45, 12, 43, 98, 67], label: 'Series A'}
+//     ]
+//   }
+// ]
+
