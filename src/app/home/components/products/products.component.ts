@@ -13,6 +13,7 @@ import { ProductsService } from "./../../../services/products/products.service";
 export class ProductsComponent implements OnInit {
   chart : Object = {};
   _dChart = [];
+  temArr = [];
 
   constructor(
     private _router: Router,
@@ -43,33 +44,13 @@ export class ProductsComponent implements OnInit {
   getCharts(){
     this._charts.getProductInfo()
       .subscribe(data => {
-        console.log(data.data);
-        for(var i = 0; i < data.data.length; i++) {
-         // console.log(data.data[i]['question']);
-         let x = String(data.data[i]['opinionType']);
-         //console.log(x);
-        // this.xyx.push(x);
-         this.doughnutChartLabels.push(String(data.data[i]['opinionType'])+",");
-          //this.doughnutChartLabels[i].push(data.data[i]['opinionType']);
+        console.log("d", data.data);
+        for(var i = 0; i < data.data.length; i++){
+          var mytemVal = data.data[i]['opinionOptType'];
+          this.temArr.push()
         }
       })
-     // this.doughnutChartLabels.push("abc","xyz");
-      //console.log("ani", this.xyx);
-    //alert(0);
-    // this._charts.getProductInfo();
-      // .subscribe(data => {
-      //   console.log("my data", data.data);
-      // })
-    // .subscribe(data => {
-    //   this.chart = data.data;
-    //   // this.chart['qid'] = Number(data.data['qid']);
-    //   console.log("test", data.data);
-    //   // let _dob = data.data['dob'];
-      
-    //   //  this.chart['dob'] = new Date(_dob);
-    // });
-   //alert("0");
-  //  console.log("testing");
+     
    }
 
   moveToProduct() {

@@ -51,10 +51,8 @@ export class PaymentsComponent implements OnInit {
        console.log(x);
        this.xyx.push(x);
        this.barChartLabels.push(String(data.data[i]['opinionType'])+",");
-        //this.doughnutChartLabels[i].push(data.data[i]['opinionType']);
       }
     })
-   //this.doughnutChartLabels.push("abc","xyz");
     console.log("ani", this.xyx);
   }
 
