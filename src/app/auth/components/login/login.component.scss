@@ -1,0 +1,129 @@
+$font-stack:    "Oswald",Helvetica,Arial,sans-serif;
+$primary-color: #333;
+$background: #f2f5fa;
+$card-box-color: rgba(0, 0, 0, 0.2);
+$strip: #827c7c;
+$link: #2798f8;
+$button: #2798f8;
+
+.strip {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 70%;
+    height: 20%;
+    background: $strip;
+    font-family: $font-stack;
+    > .strip_bg > h2 > {
+      span:first-child {
+        font-weight: 200;
+        letter-spacing: -1px;
+      }
+     strong:last-child {
+        font-weight: 400;
+        letter-spacing: -1px;
+      }
+    }
+  }
+  
+  .loginBox {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: auto;
+    background: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    padding: 0px;
+  }
+  
+  .login-mb {
+    width: 75%;
+    position: absolute;
+    left: 8%;
+    top: 10%;
+  }
+  
+  .container {
+    padding: 15%;
+  }
+  
+  .container-mb {
+    padding: 10%;
+  }
+  
+  button{
+      background: $button;
+      color: #fff;
+  }
+//   .example-radio-group {
+//     display: inline-flex;
+//     flex-direction: column;
+//   }
+  
+//   .example-radio-button {
+//     margin: 5px;
+//   }
+  
+//   .example-selected-value {
+//     margin: 15px 0;
+//   }
+  
+//   .example-form {
+//     margin: 5px;
+//   }
+  
+//   .mat-card-footer {
+//     position: absolute;
+//     width: 100%;
+//     min-height: 5px;
+//     bottom: 30px;
+//     left: 17px;
+//     padding-top: 15px;
+//   }
+  
+  a {
+    text-decoration: none;
+    color: $link;
+    line-height: 24px;
+  }
+  
+  /* strip background */
+  
+  .strip_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    color: #ecebeb;
+    right: 55%;
+    > h2 span {
+      display: block;
+      padding-top: 30px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .strip {
+      position: absolute;
+      top: 13%;
+      left: 8%;
+      width: 85%;
+      height: 15%;
+      margin-top: 20px;
+    }
+    .login-mb {
+      top: 25%;
+    }
+    .strip_bg > h2 {
+      span {
+        padding-top: 0px;
+        color: #ecebeb;
+        font-family: $font-stack;
+      }
+      padding-top: 15px;
+      font-size: 18px;
+    }
+  }

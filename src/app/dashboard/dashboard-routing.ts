@@ -5,13 +5,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const dashboardRoutes: Routes = [
     {path: '', component:DashboardComponent , 
-        // children:[
-        //     {path: 'profile' , loadChildren:"./../profile/profile.module#ProfileModule"},
-        //     {path: 'providers' , loadChildren:"./../providers/providers.module#ProvidersModule"},
-        //     {path: 'provider' , loadChildren:"./../outlet/outlet.module#OutletModule"}
-        // ]
+        children:[  
+            {path: 'home' , loadChildren:"./../home/home.module#HomeModule"},
+            {path: 'product' , loadChildren:"./../products/products.module#ProductsModule"},
+            {path: 'payment' , loadChildren:"./../payments/payments.module#PaymentsModule"},
+            {path: 'corporate' , loadChildren:"./../corporates/corporates.module#CorporatesModule"},
+        ]
     },
-    {path: '**', redirectTo: '', pathMatch: 'full'},
+    {path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
  
 export const dashboardrouting: ModuleWithProviders = RouterModule.forChild(dashboardRoutes);

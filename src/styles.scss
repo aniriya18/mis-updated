@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+.ngx-datatable.material{
+    font-family: "Raleway",Helvetica,Arial,sans-serif;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 10px 0px rgba(0, 0, 0, 0.14), 0 3px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.ngx-datatable.material .datatable-header {
+    border: 1px solid #d2e3f9 !important;
+    background: #e4ecf9 !important;
+  }
+  
+  .datatable-footer .datatable-pager li.active a {
+    background-color: #e4ecf9 !important;
+    font-weight: bold;
+  }
+  
+  .ngx-datatable {
+    .datatable-body .datatable-row-wrapper {
+      height: auto !important;
+    }
+    &.material .datatable-body .datatable-body-row .datatable-body-cell {
+      text-align: left;
+      padding: .5rem 1.2rem;
+      vertical-align: middle;
+      border-top: 0;
+      transition: width 0.3s ease;
+    }
+  }
+  
+  .datatable-checkbox {
+    display: inline-flex;
+  }
+  
+//   .datatable-body-row {
+//     height: auto !important;
+//     border-bottom: 1px solid #ccc;
+//   }
+  
+  .datatable-body-cell {
+    height: auto !important;
+    white-space: normal !important;
+  }
+  
+  /*.ngx-datatable .datatable-body .datatable-row-wrapper:hover {
+      box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);border: 1px solid #d8d8d8;;
+  }*/
+  
+  .ngx-datatable.material {
+    &:not(.cell-selection) .datatable-body-row:hover {
+      background-color: #fff !important;
+      transition-property: background;
+      transition-duration: .3s;
+      transition-timing-function: linear;
+      .datatable-row-group {
+        background-color: #fff !important;
+        transition-property: background;
+        transition-duration: .3s;
+        transition-timing-function: linear;
+      }
+    }
+    .datatable-header .datatable-header-cell {
+      vertical-align: middle;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .datatable-footer {
+    //   border-top: none;
+    //   font-size: 16px;
+      .page-count {
+        color: #777575;
+      }
+    }
+  }

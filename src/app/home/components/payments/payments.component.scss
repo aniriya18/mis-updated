@@ -1,0 +1,15 @@
+.card{
+  cursor: pointer;
+}
+.mat-card-footer {
+    border-top: 1px solid #d2d2d2;
+    padding: 10px;
+    text-align: center;
+    > h2 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      font-family: "Oswald",Helvetica,Arial,sans-serif;
+    }
+  }

@@ -1,0 +1,45 @@
+<mat-sidenav-container class="example-sidenav-fab-container" fullscreen>
+  
+  <mat-sidenav #sidenav [mode]="isOpenSide" [opened]="isOpened">
+    <div class="example-scrolling-content">
+        <ul class="nav">
+          <a routerLink="profile" [routerLinkActive]="['active']">
+            <li>
+              <p><mat-icon class="mainIcon">dashboard</mat-icon></p>
+              <p>DASHBOARD</p>
+            </li>
+          </a>
+  
+          <a routerLink="product" [routerLinkActive]="['active']">
+            <li>
+              <span class="badge">12</span>
+              <p><mat-icon class="mainIcon">store</mat-icon></p>
+              <p>PRODUCTS</p>
+            </li>
+          </a>
+          <a routerLink="payment" [routerLinkActive]="['active']">
+            <li>   
+              <p><mat-icon class="mainIcon">payment</mat-icon></p>
+              <p>PAYMENTS</p>  
+            </li>
+          </a>
+          <a routerLink="corporate" [routerLinkActive]="['active']">
+            <li>  
+                <p><mat-icon class="mainIcon">domain</mat-icon></p>
+                <p>CORPORATES</p>  
+            </li>
+          </a>
+          <a href="javascript:void(0)">
+            <li> 
+              <p><mat-icon class="mainIcon">assignment</mat-icon></p>
+              <p>TRANSACTION</p>
+            </li>
+          </a>
+        </ul>
+    </div>
+  </mat-sidenav>
+  
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  </mat-sidenav-container>

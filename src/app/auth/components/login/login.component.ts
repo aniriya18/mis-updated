@@ -11,8 +11,12 @@ import { JwtHelper } from "angular2-jwt";
   providers:[LoginService]
 })
 export class LoginComponent implements OnInit {
-  login: object = {};
-  
+  // login: object = {};
+  login: any = {
+    mobileNumber:"9313567755"
+    // email:"admin@h3u.com",
+    // password:"admin"
+  };
   constructor(
     private router: Router,
     private loginService: LoginService,
@@ -24,10 +28,18 @@ export class LoginComponent implements OnInit {
 
   sumbitFrm(credential) {
     console.log(credential);
-    this.loginService.login(credential.email,credential.password)
-      .subscribe(loginReponse => {
-        if(this.validateLoginResponse(loginReponse)){
-          localStorage.setItem(this.config.nerve_token_key, JSON.stringify({ token: loginReponse.data.token }));
+    // this.loginService.login(credential.email,credential.password)
+    //   .subscribe(loginReponse => {
+    //     if(this.validateLoginResponse(loginReponse)){
+    //       localStorage.setItem(this.config.mis_token_key, JSON.stringify({ token: loginReponse.data.token }));
+    //       this.router.navigate(['/dashboard']);
+    //     }
+    //   })
+    this.loginService.login(credential.mobileNumber) 
+      .subscribe(loginResponse => {
+        console.log(loginResponse);
+        if(this.validateLoginResponse(loginResponse)){
+          localStorage.setItem(this.config.mis_token_key, JSON.stringify({token: loginResponse.data.token}));
           this.router.navigate(['/dashboard']);
         }
       })

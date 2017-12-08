@@ -1,0 +1,65 @@
+<header class="headerSec">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon class="material-icons mat-24">menu</mat-icon>
+  </button>￼
+  <img fxFlexAlign="center" class="logo" src="assets/images/H3U_Logo_SVG.svg" />
+  <!------ large screen ------>
+  <ul class="headerRightMenu" fxHide fxShow.sm fxShow.mat fxShow.lg>
+    <li>
+       <span [matMenuTriggerFor]="profileXs" class="triggerMenu"> 
+         <mat-icon>person</mat-icon> <span>Anindita Kundu</span><mat-icon>expand_more</mat-icon>
+       </span>
+       <mat-menu #profileXs="matMenu"  [overlapTrigger]="true" yPosition="below">
+        <button mat-menu-item><mat-icon>perm_identity</mat-icon> Profile</button>
+        <button mat-menu-item (click)="logOut()"><mat-icon>exit_to_app</mat-icon> Log Out</button>
+      </mat-menu>
+    </li>
+    <li>
+      <span>
+        <mat-icon>settings</mat-icon> <br><span>SETTING</span>
+      </span>
+    </li>
+    <li>
+      <span>
+        <mat-icon>notifications</mat-icon> <br><span>NOTIFICATION</span>
+      </span>
+    </li>
+    <!-- <li>
+      <span [matMenuTriggerFor]="addMenuxs" class="triggerMenu">
+        <mat-icon>add</mat-icon> <br><span>ADD</span>
+      </span>
+      <mat-menu #addMenuxs="matMenu" [overlapTrigger]="true">
+        <button mat-menu-item><img src="assets/images/Service-20.png"> Add Provider</button>
+        <button mat-menu-item><mat-icon>add</mat-icon>Add Outlet</button>
+        <button mat-menu-item><img src="assets/images/services.png">Add Service</button>
+        <button mat-menu-item ><img src="assets/images/industry-line_stethescope-20.png">Add Doctor</button>
+      </mat-menu>
+    </li> -->
+  </ul> 
+  <!--- small screen -->
+  <ul class="headerRightMenu" fxShow fxHide.mat fxHide.sm fxHide.lg fxLayoutAlign="end end">
+    <li>
+      <span [matMenuTriggerFor]="profileLg" class="triggerMenu">
+         <mat-icon>person</mat-icon>
+       </span>
+       <mat-menu #profileLg="matMenu" [overlapTrigger]="true">
+         <span fxShow fxHide.mat fxHide.sm fxHide.lg></span>
+        <button mat-menu-item data-thickness="bar"><mat-icon>perm_identity</mat-icon> Profile</button>
+        <button mat-menu-item (click)="logOut()"><mat-icon>exit_to_app</mat-icon> Log Out</button>
+      </mat-menu>
+    </li>
+    <li><mat-icon>settings</mat-icon> <br>SETTING</li>
+    <li><mat-icon>notifications</mat-icon> <br>NOTIFICATION</li>
+    <!-- <li>
+      <span [matMenuTriggerFor]="addMenuLg" class="triggerMenu">
+        <mat-icon>add</mat-icon> <br>ADD
+      </span>
+      <mat-menu #addMenuLg="matMenu" [overlapTrigger]="true">
+        <button mat-menu-item><img src="assets/images/Service-20.png"> Add Provider</button>
+        <button mat-menu-item><mat-icon>add</mat-icon>Add Outlet</button>
+        <button mat-menu-item><img src="assets/images/services.png"> Add Service</button>
+        <button mat-menu-item ><img src="assets/images/industry-line_stethescope-20.png"> Add Doctor</button>
+      </mat-menu>
+    </li> -->
+  </ul>
+</header>

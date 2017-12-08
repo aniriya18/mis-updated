@@ -1,7 +1,7 @@
 import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './../guards/auth.guard';
-
+import { LoginService } from './../services/auth/login.service';
 
 const appRoutes: Routes = [
    {path: '', redirectTo: 'user', pathMatch: 'full'},

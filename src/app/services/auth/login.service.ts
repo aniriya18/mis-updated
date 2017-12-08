@@ -11,18 +11,25 @@ export class LoginService {
     @Inject(APP_CONFIG) private config: AppConfig
   ) { }
 
-  login(username,password){
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-    return this._http.post(this.config.api_base_url + this.config.login_url
-    ,'{"username":"'+username+'","password":"'+password+'"}'
-    ,options
-    )
+  // login(username,password){
+  //   let headers = new Headers({ 'Content-Type': 'application/json' });
+  //   let options = new RequestOptions({ headers: headers });
+  //   return this._http.post(this.config.api_base_url + this.config.login_url
+  //   ,'{"username":"'+username+'","password":"'+password+'"}'
+  //   ,options
+  //   )
+  //   .map(res=>res.json());
+  // }
+  login(mobileNumber){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({ headers: headers});
+    return this._http.post(this.config.api_base_url + this.config.login_url,
+       '{"mobileNumber": "'+mobileNumber+'"}', options)
     .map(res=>res.json());
   }
 
   logout(){
-    localStorage.removeItem(this.config.nerve_token_key);
+    localStorage.removeItem(this.config.mis_token_key);
   }
 
 }
